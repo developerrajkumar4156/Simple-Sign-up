@@ -5,14 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/parent_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sign_up_btn">
+        <LinearLayout
+            android:id="@+id/sign_up_entry_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <EditText
+                    android:id="@+id/first_name_txt_field"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name_txt_hint"
+                    android:layout_weight="0.5"
+                    android:layout_marginEnd="2dp"/>
+                <EditText
+                    android:id="@+id/last_name_txt_field"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name_txt_hint"
+                    android:layout_weight="0.5"
+                    android:layout_marginStart="2dp"/>
+            </LinearLayout>
 
-    <TextView
+            <EditText
+                android:id="@+id/email_id_txt_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="@string/email_txt_hint" />
+            <EditText
+                android:id="@+id/mobile_nmbr_txt_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mobile_nmbr_txt_hint"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/password_txt_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="@string/password_txt_hnt"/>
+            <EditText
+                android:id="@+id/cnfrm_password_txt_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confrm_password_txt_hnt"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <Button
+        android:id="@+id/sign_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="@string/sign_up_btn_txt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parent_scroll_view"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
