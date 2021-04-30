@@ -1,0 +1,3 @@
+include ':password-generator'
+include ':app'
+rootProject.name = "Simple sign-up"
