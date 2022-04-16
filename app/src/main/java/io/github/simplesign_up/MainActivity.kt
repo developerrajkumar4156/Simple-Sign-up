@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         signUpBtn.setOnClickListener {
             val generatedPassword = passwordGenerator.getPassword()
-            Toast.makeText(this,generatedPassword,Toast.LENGTH_LONG).show()
+          
         }
 
     }
