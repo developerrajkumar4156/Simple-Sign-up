@@ -15,10 +15,15 @@ class MainActivity : AppCompatActivity() {
         signUpBtn = findViewById(R.id.sign_up_btn)
 
         val passwordGenerator = PasswordGenerator()
+	val minPasswordLength = 10
 
         signUpBtn.setOnClickListener {
-            val generatedPassword = passwordGenerator.getPassword()
-            Toast.makeText(this,generatedPassword,Toast.LENGTH_LONG).show()
+	    val generatedPassword = passwordGenerator.getPassword()
+		if(generatedPassword.length >= minPasswordLength){
+	            Toast.makeText(this,generatedPassword,Toast.LENGTH_LONG).show()
+		}else{
+		    Toast.makeText(this,"Password length is too short..",Toast.LENGTH_LONG).show()
+		}
         }
 
     }
